@@ -1,0 +1,70 @@
+.stick {
+  --angle: 15deg;
+  width: var(--w);
+  height: var(--h);
+  background-color: transparent;
+  padding: calc(var(--h) * 0.32) 0;
+  position: absolute;
+  transition: all 0.25s ease-in-out;
+}
+
+.stick div {
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.head {
+  margin: 0 auto;
+  --d: calc(var(--h) * 0.2);
+  width: var(--d);
+  height: var(--d);
+  border: var(--t) solid var(--c);
+  border-radius: 50%;
+  font-size: smaller;
+}
+
+.body {
+  margin: 0 auto;
+  width: 0;
+  --bh: calc(var(--h) * 0.2);
+  height: var(--bh);
+  border: calc(var(--t) * 0.5) solid var(--c);
+}
+
+.body > div {
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+}
+
+.arms > div,
+.legs > div {
+  position: absolute;
+  top: 0;
+  left: calc(-0.5 * var(--t));
+  content: '';
+  width: 0;
+  display: inline-block;
+  height: calc(var(--bh) * 1.4);
+  border: calc(var(--t) * 0.5) solid var(--c);
+  transform-origin: top left;
+}
+
+.arms {
+  top: calc(var(--bh) * 0.1);
+}
+.arms > div:first-child {
+  transform: rotate(var(--left-angle, var(--angle)));
+}
+.arms > div:last-child {
+  transform: rotate(var(--right-angle, calc(-1 * var(--angle))));
+}
+.legs {
+  top: calc(var(--bh) - var(--t));
+}
+.legs > div:first-child {
+  transform: rotate(var(--angle));
+}
+.legs > div:last-child {
+  transform: rotate(calc(-1 * var(--angle)));
+}
