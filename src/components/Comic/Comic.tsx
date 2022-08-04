@@ -6,8 +6,9 @@ import './style.css';
 import Scene from '@/components/Scene';
 import {baseCSSProps, divCss, multCss} from '@/util/css';
 import {ComicProps} from '@/util/types';
+import {chainClickable} from 'hooks/chainClickable';
 
-const Comic: FC<ComicProps> = ({color, dimensions, layout, scenes}) => {
+const Comic: FC<ComicProps> = ({color, dimensions, layout, onClick, scenes}) => {
   const {width, height, thickness} = dimensions ?? Default.dimensions;
 
   const comicStyle = baseCSSProps({
@@ -37,7 +38,7 @@ const Comic: FC<ComicProps> = ({color, dimensions, layout, scenes}) => {
                 },
               }
             : undefined;
-          return normalizedProps && <Scene key={`scene-${idx}`} {...normalizedProps} />;
+          return normalizedProps && <Scene key={`scene-${idx}`} {...normalizedProps} onClick={onClick} />;
         })}
       </div>
     );
@@ -50,4 +51,4 @@ const Comic: FC<ComicProps> = ({color, dimensions, layout, scenes}) => {
   );
 };
 
-export default Comic;
+export default chainClickable(Comic);

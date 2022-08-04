@@ -11,6 +11,7 @@ export const Default: Required<ComicProps> = {
     thickness: StickPresets.Default.dimensions.thickness,
   },
   id: '',
+  onClick: () => null,
   scenes: [],
   layout: [],
 };

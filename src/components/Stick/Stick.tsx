@@ -1,5 +1,7 @@
 import React, {FC} from 'react';
 
+import {chainCall, chainClickable} from '../../hooks/chainClickable';
+
 import {Default, Positions} from './presets';
 
 import './style.css';
@@ -7,7 +9,7 @@ import {rotateTransformCSSProp, stickCSSProps} from '@/util/css';
 import {LimbAngleProps, StickProps} from '@/util/types';
 
 const Stick: FC<StickProps> = (props = Default) => {
-  const {color, posId, customPos, dimensions, coord} = props;
+  const {color, posId, customPos, dimensions, coord, onClick} = props;
   const hasCustomPose = posId === 'custom' && customPos;
   const {limbs, offsets} = !hasCustomPose ? Positions[posId ?? 'custom'] : customPos;
   const {width, height, thickness} = {...Default.dimensions, ...dimensions};
@@ -29,7 +31,7 @@ const Stick: FC<StickProps> = (props = Default) => {
   };
 
   return (
-    <div className="stick" style={stickStyle}>
+    <div className="stick" style={stickStyle} onClick={chainCall(onClick)}>
       <div className="head"></div>
       <div className="body">
         <div className="arms">
@@ -45,4 +47,6 @@ const Stick: FC<StickProps> = (props = Default) => {
   );
 };
 
-export default Stick;
+// export const ClickableStick = makeClickable(Stick);
+
+export default chainClickable(Stick);

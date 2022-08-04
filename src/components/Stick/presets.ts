@@ -19,6 +19,7 @@ export const Default: Required<StickProps> = {
     thickness: '2px',
   },
   id: 'stick',
+  onClick: () => null,
   posId: 'default',
 };
 

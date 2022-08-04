@@ -25,7 +25,11 @@ export type LimbAngles = {
 
 export type StickPosition = {limbs?: LimbAngles; offsets?: Coordinates};
 
-export type CommonProps = {
+export type Clickable = {
+  onClick: (id?: string) => void;
+}
+
+export type CommonProps = Clickable & {
   id: string;
   color?: string;
   dimensions?: Partial<Dimensions>;
@@ -37,7 +41,8 @@ export type StickProps = CommonProps & {
   customPos?: StickPosition;
 };
 
-export type BaseCSSPropsInput = {
+
+export type BaseCSSPropsInput =  {
   color?: string;
   width?: string;
   height?: string;

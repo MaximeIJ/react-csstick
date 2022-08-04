@@ -6,8 +6,9 @@ import './style.css';
 import Stick from '@/components/Stick';
 import {baseCSSProps} from '@/util/css';
 import {SceneProps} from '@/util/types';
+import {chainClickable} from 'hooks/chainClickable';
 
-const Scene: FC<SceneProps> = ({color, dimensions, sticks}) => {
+const Scene: FC<SceneProps> = ({color, dimensions, sticks, onClick}) => {
   const {width, height, thickness} = dimensions ?? Default.dimensions;
 
   const sceneStyle = baseCSSProps({
@@ -18,12 +19,12 @@ const Scene: FC<SceneProps> = ({color, dimensions, sticks}) => {
   });
 
   return (
-    <div className="container" style={sceneStyle}>
+    <div className="container" style={sceneStyle} onClick={() => onClick()}>
       {sticks?.map((stickProps, idx) => (
-        <Stick {...stickProps} key={`stick-${idx}-${stickProps.id}`} />
+        <Stick {...stickProps} onClick={onClick} key={`stick-${idx}-${stickProps.id}`} />
       ))}
     </div>
   );
 };
 
-export default Scene;
+export default chainClickable(Scene);

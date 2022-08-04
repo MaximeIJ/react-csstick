@@ -1,6 +1,6 @@
 {
   "name": "@maximeij/react-csstick",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "CSS Stick figures and comics",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
