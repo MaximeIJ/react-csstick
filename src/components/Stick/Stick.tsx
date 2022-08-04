@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 
-import {Default, POSITIONS} from './presets';
+import {Default, Positions} from './presets';
 
 import './style.css';
 import {rotateTransformCSSProp, stickCSSProps} from '@/util/css';
@@ -9,7 +9,7 @@ import {LimbAngleProps, StickProps} from '@/util/types';
 const Stick: FC<StickProps> = (props = Default) => {
   const {color, posId, customPos, dimensions, coord} = props;
   const hasCustomPose = posId === 'custom' && customPos;
-  const {limbs, offsets} = !hasCustomPose ? POSITIONS[posId ?? 'custom'] : customPos;
+  const {limbs, offsets} = !hasCustomPose ? Positions[posId ?? 'custom'] : customPos;
   const {width, height, thickness} = {...Default.dimensions, ...dimensions};
   const {base = 0, arms, legs} = {...Default.customPos.limbs, ...limbs};
 

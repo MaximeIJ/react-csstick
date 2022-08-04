@@ -1,6 +1,6 @@
 import {CSSProperties} from 'react';
 
-import {StickCSSPropsInput} from './types';
+import {BaseCSSPropsInput, StickCSSPropsInput} from './types';
 
 /**
  * Generate CSS strings
@@ -58,13 +58,25 @@ export const rotateTransformCSSProp = (angle?: number) =>
  * @param input Subset of StickProps needed for dynamic CSS props
  * @returns CSSProperties object with the inputs process where needed
  */
-export const stickCSSProps = (input: StickCSSPropsInput): CSSProperties => {
-  const {color, width, height, thickness, base, coord, offsets} = input;
+export const baseCSSProps = (input: BaseCSSPropsInput): CSSProperties => {
+  const {color, width, height, thickness} = input;
   return {
     ['--w']: width,
     ['--h']: height,
     ['--t']: thickness,
     ['--c']: color,
+  } as CSSProperties;
+};
+
+/**
+ *
+ * @param input Subset of StickProps needed for dynamic CSS props
+ * @returns CSSProperties object with the inputs process where needed
+ */
+export const stickCSSProps = (input: StickCSSPropsInput): CSSProperties => {
+  const {color, width, height, thickness, base, coord, offsets} = input;
+  return {
+    ...baseCSSProps({color, width, height, thickness}),
     ['--angle']: deg(base ?? 0),
     top: `calc(${coord?.y ?? 0} - ${offsets?.y ?? '0%'})`,
     left: `calc(${coord?.x ?? 0} - ${offsets?.x ?? '0%'})`,

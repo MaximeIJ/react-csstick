@@ -1,0 +1,7 @@
+.container {
+  width: var(--w, 100%);
+  height: var(--h, 100%);
+  position: relative;
+  outline: var(--t, 2px) solid var(--c, #888888);
+  margin: auto;
+}

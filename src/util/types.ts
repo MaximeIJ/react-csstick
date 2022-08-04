@@ -37,11 +37,14 @@ export type StickProps = CommonProps & {
   customPos?: StickPosition;
 };
 
-export type StickCSSPropsInput = {
+export type BaseCSSPropsInput = {
   color?: string;
   width?: string;
   height?: string;
   thickness?: string;
+};
+
+export type StickCSSPropsInput = BaseCSSPropsInput & {
   base?: number;
   coord?: Coordinates;
   offsets?: Coordinates;

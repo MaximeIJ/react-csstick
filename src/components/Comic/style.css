@@ -1,0 +1,13 @@
+.container {
+  width: var(--w, 100%);
+  height: var(--h, 100%);
+  position: relative;
+  outline: var(--t, 2px) solid var(--c, #888888);
+  margin: 3rem auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
