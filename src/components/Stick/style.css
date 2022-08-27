@@ -1,9 +1,9 @@
 .stick {
-  --angle: 15deg;
   width: var(--w);
   height: var(--h);
   background-color: transparent;
   padding: calc(var(--h) * 0.32) 0;
+  --bh: calc(var(--h) * 0.2);
   position: absolute;
   transition: all 0.25s ease-in-out;
 }
@@ -27,7 +27,6 @@
 .body {
   margin: 0 auto;
   width: 0;
-  --bh: calc(var(--h) * 0.2);
   height: var(--bh);
   border: calc(var(--t) * 0.5) solid var(--c);
 }

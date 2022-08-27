@@ -1,7 +1,6 @@
 div.bubble {
   border-radius: var(--br);
-  background-color: var(--bc);
-  border: var(--t) solid var(--c, transparent);
+  border: var(--t) solid var(--bc, transparent);
   position: absolute !important;
   width: var(--w);
   height: var(--h);
@@ -12,7 +11,7 @@ div.bubble {
 .text {
   text-align: center;
   font-family: var(--f, Comic Sans MS, Comic Sans, cursive);
-  font-size: var(--fs, auto);
+  font-size: var(--fs, calc(var(--bh) * 0.5));
   font-weight: var(--fw, normal);
   color: var(--c, #888);
 }
