@@ -5,12 +5,6 @@
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "types": "./lib/index.d.ts",
-  "babel": {
-    "presets": [
-      "@babel/preset-react",
-      "@babel/preset-typescript"
-    ]
-  },
   "files": [
     "lib",
     "LICENSE",

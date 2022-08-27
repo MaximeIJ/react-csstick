@@ -8,13 +8,14 @@ import {baseCSSProps} from '@/util/css';
 import {SceneProps} from '@/util/types';
 import {chainClickable} from 'hooks/chainClickable';
 
-const Scene: FC<SceneProps> = ({color, dimensions, sticks, onClick}) => {
+const Scene: FC<SceneProps> = ({bgColor, color, dimensions, sticks, onClick}) => {
   const {width, height, thickness} = dimensions ?? Default.dimensions;
 
   const sceneStyle = baseCSSProps({
     width,
     height,
     thickness,
+    bgColor,
     color,
   });
 

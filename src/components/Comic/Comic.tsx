@@ -8,13 +8,14 @@ import {baseCSSProps, divCss, multCss} from '@/util/css';
 import {ComicProps} from '@/util/types';
 import {chainClickable} from 'hooks/chainClickable';
 
-const Comic: FC<ComicProps> = ({color, dimensions, layout, onClick, scenes}) => {
+const Comic: FC<ComicProps> = ({bgColor, color, dimensions, layout, onClick, scenes}) => {
   const {width, height, thickness} = dimensions ?? Default.dimensions;
 
   const comicStyle = baseCSSProps({
     width,
     height,
     thickness,
+    bgColor,
     color,
   });
 

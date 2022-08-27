@@ -21,6 +21,7 @@
   border: var(--t) solid var(--c);
   border-radius: 50%;
   font-size: smaller;
+  background-color: var(--bgc, transparent);
 }
 
 .body {

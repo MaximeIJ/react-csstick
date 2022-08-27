@@ -27,33 +27,47 @@ export type StickPosition = {limbs?: LimbAngles; offsets?: Coordinates};
 
 export type Clickable = {
   onClick: (id?: string) => void;
-}
+};
 
-export type CommonProps = Clickable & {
+export type CommonProps<T = unknown> = Clickable & {
   id: string;
+  type: 'common' | 'stick' | 'text' | 'scene' | 'comic';
+  bgColor?: string;
   color?: string;
+  coord?: Coordinates;
   dimensions?: Partial<Dimensions>;
+  children?: Array<T extends CommonProps ? T : CommonProps>;
 };
 
 export type StickProps = CommonProps & {
   posId?: PosType;
-  coord?: Coordinates;
   customPos?: StickPosition;
 };
 
-
-export type BaseCSSPropsInput =  {
+export type BaseCSSPropsInput = {
   color?: string;
+  coord?: Coordinates;
   width?: string;
   height?: string;
   thickness?: string;
+  bgColor?: string;
 };
 
 export type StickCSSPropsInput = BaseCSSPropsInput & {
   base?: number;
-  coord?: Coordinates;
   offsets?: Coordinates;
 };
+
+export type TextProps = {
+  text?: string;
+  font?: string;
+  fontSize?: string;
+  fontWeight?: string;
+  borderColor?: string;
+  borderRadius?: string;
+};
+
+export type TextBubbleProps = CommonProps & TextProps;
 
 export type SceneProps = CommonProps & {
   sticks?: Array<StickProps>;
@@ -62,12 +76,4 @@ export type SceneProps = CommonProps & {
 export type ComicProps = CommonProps & {
   scenes: Array<SceneProps>;
   layout: Array<Array<number>>;
-};
-
-export type EditorProps<T> = {
-  onChange: (newProps: T) => void;
-  starter?: T;
-  selection?: string;
-  setSelection?: (s: string) => void;
-  showPreview?: boolean;
 };

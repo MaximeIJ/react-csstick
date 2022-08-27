@@ -5,6 +5,13 @@ import {Coordinates, SceneProps} from '@/util/types';
 const DEFAULT_SCENE_SIZE = '100%';
 
 export const Default: Required<SceneProps> = {
+  children: [],
+  type: 'scene',
+  bgColor: 'transparent',
+  coord: {
+    x: '0',
+    y: '0',
+  },
   color: StickPresets.Default.color,
   dimensions: {
     width: DEFAULT_SCENE_SIZE,

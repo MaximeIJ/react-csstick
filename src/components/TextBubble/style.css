@@ -1,0 +1,18 @@
+div.bubble {
+  border-radius: var(--br);
+  background-color: var(--bc);
+  border: var(--t) solid var(--c, transparent);
+  position: absolute !important;
+  width: var(--w);
+  height: var(--h);
+  background-color: var(--bgc, transparent);
+  padding: calc(var(--t, 1px) * 2);
+}
+
+.text {
+  text-align: center;
+  font-family: var(--f, Comic Sans MS, Comic Sans, cursive);
+  font-size: var(--fs, auto);
+  font-weight: var(--fw, normal);
+  color: var(--c, #888);
+}
