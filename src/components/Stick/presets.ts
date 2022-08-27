@@ -1,20 +1,9 @@
-import { offsetVar } from '@/util/css';
-import {PosType, StickPosition, StickProps, TextBubbleProps} from '@/util/types';
+import {PosType, StickPosition, StickProps} from '@/util/types';
 
 const DEFAULT_STICK_SIZE = '12rem';
 
 export const Default: Required<StickProps> = {
-  children: [{
-    type: 'text',
-    id: 'test',
-    text: 'Hello World!',
-    coord: {
-      x: offsetVar('w'),
-      y: '0%',
-    },
-    
-
-  } as TextBubbleProps],
+  children: [],
   bgColor: 'transparent',
   color: '#888888',
   coord: {
