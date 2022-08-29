@@ -1,6 +1,6 @@
 {
   "name": "@maximeij/react-csstick",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "CSS Stick figures and comics",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
@@ -15,9 +15,12 @@
     "rollup": "rimraf lib && rollup -c",
     "prepublishOnly": "npm run rollup"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MaximeIJ/react-csstick.git"
+    "url": "https://github.com/MaximeIJ/react-csstick.git"
   },
   "keywords": [
     "css",
@@ -58,8 +61,5 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "typescript": "^4.7.4"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/MaximeIJ"
   }
 }

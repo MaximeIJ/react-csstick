@@ -19,7 +19,7 @@ export const Default: Required<TextBubbleProps> = {
   id: 'text bubble',
   onClick: () => null,
   text: '',
-  font: 'comic sans',
+  font: 'Comic Sans MS, Comic Sans, cursive',
   fontSize: '2rem',
   fontWeight: 'normal',
   borderColor: 'transparent',
