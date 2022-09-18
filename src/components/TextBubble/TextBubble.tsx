@@ -9,13 +9,15 @@ import {stickCSSProps, textCSSProps} from '@/util/css';
 import {TextBubbleProps} from '@/util/types';
 
 const TextBubble: FC<TextBubbleProps> = (props = Default) => {
-  const {font, fontSize, fontWeight, borderColor, borderRadius, color, dimensions, coord, text, onClick} = props;
+  const {font, fontSize, fontWeight, bgColor, borderColor, borderRadius, color, dimensions, coord, text, onClick} =
+    props;
   const {width, height, thickness} = {...Default.dimensions, ...dimensions};
 
   const stickStyle = stickCSSProps({
     width,
     height,
     thickness,
+    bgColor,
     color,
     coord,
   });

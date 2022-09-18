@@ -8,6 +8,8 @@ CSS Stick figures and comics
   - Stick - CSS Stick figure with customizable position
   - TextBubble - Rudimentary box with controllable props
 
+Try it live at https://lynxlab.xyz/stick
+
 ### Coming soon
 
 - Limb joints (elbow, knee, etc)

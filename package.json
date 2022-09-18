@@ -1,14 +1,12 @@
 {
   "name": "@maximeij/react-csstick",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "CSS Stick figures and comics",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "types": "./lib/index.d.ts",
   "files": [
-    "lib",
-    "LICENSE",
-    "package.json"
+    "lib"
   ],
   "scripts": {
     "lint": "eslint . --fix && prettier -w .",

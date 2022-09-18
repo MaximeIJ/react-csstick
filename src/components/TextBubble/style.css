@@ -2,8 +2,8 @@ div.bubble {
   border-radius: var(--br);
   border: var(--t) solid var(--bc, transparent);
   position: absolute !important;
-  width: var(--w);
-  height: var(--h);
+  width: fit-content;
+  height: fit-content;
   background-color: var(--bgc, transparent);
   padding: calc(var(--t, 1px) * 2);
 }
@@ -14,4 +14,5 @@ div.bubble {
   font-size: var(--fs, calc(var(--bh) * 0.5));
   font-weight: var(--fw, normal);
   color: var(--c, #888);
+  white-space: pre;
 }

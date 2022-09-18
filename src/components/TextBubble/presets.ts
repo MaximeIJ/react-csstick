@@ -1,6 +1,6 @@
 import {TextBubbleProps} from '@/util/types';
 
-const DEFAULT_SIZE = 'fit-content';
+const DEFAULT_SIZE = '3rem';
 
 export const Default: Required<TextBubbleProps> = {
   children: [],
@@ -20,7 +20,7 @@ export const Default: Required<TextBubbleProps> = {
   onClick: () => null,
   text: '',
   font: 'Comic Sans MS, Comic Sans, cursive',
-  fontSize: '2rem',
+  fontSize: '1.5rem',
   fontWeight: 'normal',
   borderColor: 'transparent',
   borderRadius: '40%',

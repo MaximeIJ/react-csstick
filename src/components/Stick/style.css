@@ -2,7 +2,7 @@
   width: var(--w);
   height: var(--h);
   background-color: transparent;
-  padding: calc(var(--h) * 0.32) 0;
+  padding: 0;
   --bh: calc(var(--h) * 0.2);
   position: absolute;
   transition: all 0.25s ease-in-out;
@@ -13,8 +13,14 @@
   transition: all 0.5s ease-in-out;
 }
 
+/* .stick > div {
+  width: 100%;
+  height: 100%;
+} */
+
 .head {
   margin: 0 auto;
+  margin-top: calc(var(--h) * 0.32);
   --d: calc(var(--h) * 0.2);
   width: var(--d);
   height: var(--d);

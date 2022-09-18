@@ -34,6 +34,7 @@ const Stick: FC<StickProps> = (props = Default) => {
 
   return (
     <div className="stick" style={stickStyle} onClick={chainCall(onClick)}>
+      {/* <div> */}
       <div className="head"></div>
       <div className="body">
         <div className="arms">
@@ -60,6 +61,7 @@ const Stick: FC<StickProps> = (props = Default) => {
         }
         return ChildComponent && <ChildComponent {...child} key={`stickchild-${idx}`} />;
       })}
+      {/* </div> */}
     </div>
   );
 };
