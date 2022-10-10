@@ -20,10 +20,12 @@ const Comic: FC<ComicProps> = ({bgColor, color, dimensions, layout, onClick, sce
   });
 
   const panels = useMemo(() => {
-    const normalized = layout.flatMap(r => {
-      const total = r.reduce((t, n) => t + n, 0);
-      return r.map(ogN => ogN / (total || 1));
-    });
+    const normalized = layout
+      .map(r => {
+        const total = r.reduce((t, n) => t + n, 0);
+        return r.map(ogN => ogN / (total || 1));
+      })
+      .flat();
 
     return (
       <div className="row">

@@ -70,10 +70,12 @@ export type TextProps = {
 export type TextBubbleProps = CommonProps & TextProps;
 
 export type SceneProps = CommonProps & {
+  /** @deprecated use children field instead */
   sticks?: Array<StickProps>;
 };
 
 export type ComicProps = CommonProps & {
+  /** @deprecated use children field instead */
   scenes: Array<SceneProps>;
   layout: Array<Array<number>>;
 };

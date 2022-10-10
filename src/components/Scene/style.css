@@ -5,4 +5,5 @@
   outline: var(--t, 2px) solid var(--c, #888888);
   margin: auto;
   overflow: hidden;
+  background-color: var(--bgc, transparent);
 }
