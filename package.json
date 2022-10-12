@@ -1,29 +1,27 @@
 {
   "name": "@maximeij/react-csstick",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "CSS Stick figures and comics",
+  "author": "Maxime IJ",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/MaximeIJ/react-csstick/issues"
+  },
+  "homepage": "https://github.com/MaximeIJ/react-csstick#readme",
+  "keywords": [
+    "css",
+    "css-art",
+    "stick",
+    "comic",
+    "react"
+  ],
   "main": "./lib/react-csstick.umd.js",
   "module": "./lib/react-csstick.js",
   "types": "./lib/index.d.ts",
   "files": [
     "lib"
   ],
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --fix && prettier -w .",
-    "prepack": "clean-package",
-    "postpack": "clean-package restore"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/MaximeIJ/react-csstick.git"
-  },
   "exports": {
     ".": {
       "import": "./lib/react-csstick.js",
@@ -34,19 +32,6 @@
       "require": "./lib/style.css"
     }
   },
-  "keywords": [
-    "css",
-    "css-art",
-    "stick",
-    "comic",
-    "react"
-  ],
-  "author": "Maxime IJ",
-  "license": "SEE LICENSE IN LICENSE",
-  "bugs": {
-    "url": "https://github.com/MaximeIJ/react-csstick/issues"
-  },
-  "homepage": "https://github.com/MaximeIJ/react-csstick#readme",
   "peerDependencies": {
     "react": "^18.0.0"
   },
@@ -70,5 +55,30 @@
     "typescript": "^4.7.4",
     "vite": "^3.1.0",
     "vite-plugin-dts": "^1.6.5"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --fix && prettier -w .",
+    "prepublishOnly": "clean-package"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MaximeIJ/react-csstick.git"
+  },
+  "clean-package": {
+    "extends": "clean-package/common",
+    "remove": [
+      "clean-package",
+      "dependencies",
+      "devDependencies",
+      "peerDependencies",
+      "publishConfig",
+      "scripts"
+    ]
   }
 }
