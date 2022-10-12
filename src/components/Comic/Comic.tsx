@@ -6,7 +6,7 @@ import './style.css';
 import Scene from '@/components/Scene';
 import {baseCSSProps, divCss, multCss} from '@/util/css';
 import {ComicProps} from '@/util/types';
-import {chainClickable} from 'hooks/chainClickable';
+import {chainClickable} from '@/hooks/chainClickable';
 
 const Comic: FC<ComicProps> = ({bgColor, color, dimensions, layout, onClick, scenes}) => {
   const {width, height, thickness} = dimensions ?? Default.dimensions;

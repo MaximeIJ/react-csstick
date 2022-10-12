@@ -74,7 +74,7 @@ export const baseCSSProps = (input: BaseCSSPropsInput): CSSProperties => {
  * @param input Subset of StickProps needed for dynamic CSS props
  * @returns CSSProperties object with the inputs process where needed
  */
- export const stickCSSProps = (input: StickCSSPropsInput): CSSProperties => {
+export const stickCSSProps = (input: StickCSSPropsInput): CSSProperties => {
   const {bgColor, color, width, height, thickness, base, coord, offsets} = input;
   return {
     ...baseCSSProps({bgColor, color, width, height, thickness}),
@@ -89,7 +89,7 @@ export const baseCSSProps = (input: BaseCSSPropsInput): CSSProperties => {
  * @param input Subset of StickProps needed for dynamic CSS props
  * @returns CSSProperties object with the inputs process where needed
  */
- export const textCSSProps = (input: TextProps): CSSProperties => {
+export const textCSSProps = (input: TextProps): CSSProperties => {
   const {font, fontSize, fontWeight, borderColor, borderRadius} = input;
   return {
     ['--f']: font,

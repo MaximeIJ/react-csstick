@@ -6,7 +6,7 @@ import './style.css';
 import Stick from '@/components/Stick';
 import {baseCSSProps} from '@/util/css';
 import {SceneProps} from '@/util/types';
-import {chainClickable} from 'hooks/chainClickable';
+import {chainClickable} from '@/hooks/chainClickable';
 
 const Scene: FC<SceneProps> = ({bgColor, color, dimensions, sticks, onClick}) => {
   const {width, height, thickness} = dimensions ?? Default.dimensions;

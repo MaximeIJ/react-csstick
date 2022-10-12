@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
 
-import {chainCall, chainClickable} from '../../hooks/chainClickable';
 import TextBubble from '../TextBubble';
 
 import {Default, Positions} from './presets';
 
+import {chainCall, chainClickable} from '@/hooks/chainClickable';
 import './style.css';
 import {rotateTransformCSSProp, stickCSSProps} from '@/util/css';
 import {LimbAngleProps, StickProps} from '@/util/types';
