@@ -3,6 +3,7 @@ import {PosType, StickPosition, StickProps} from '@/util/types';
 const DEFAULT_STICK_SIZE = '12rem';
 
 export const Default: Required<StickProps> = {
+  childProps: [],
   children: [],
   bgColor: 'transparent',
   color: '#888888',

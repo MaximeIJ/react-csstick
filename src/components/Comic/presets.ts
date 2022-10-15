@@ -4,7 +4,7 @@ import {ComicProps} from '@/util/types';
 const DEFAULT_COMIC_SIZE = '50vmin';
 
 export const Default: Required<ComicProps> = {
-  children: [],
+  childProps: [],
   color: StickPresets.Default.color,
   type: 'comic',
   bgColor: 'transparent',

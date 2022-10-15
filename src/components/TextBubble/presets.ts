@@ -3,7 +3,7 @@ import {TextBubbleProps} from '@/util/types';
 const DEFAULT_SIZE = '3rem';
 
 export const Default: Required<TextBubbleProps> = {
-  children: [],
+  childProps: [],
   type: 'text',
   bgColor: 'transparent',
   color: '#888888',

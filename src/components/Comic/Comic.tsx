@@ -36,7 +36,7 @@ const Comic: FC<ComicProps> = ({bgColor, color, dimensions, layout, onClick, sce
                 ...sp,
                 dimensions: {
                   ...sp.dimensions,
-                  width: multCss(sp.dimensions?.width ?? '', nf),
+                  width: multCss('100%', nf),
                   height: divCss(dimensions?.height ?? '', layout.length || 1),
                 },
               }

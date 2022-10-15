@@ -7,10 +7,10 @@ import {Default, Positions} from './presets';
 import {chainCall, chainClickable} from '@/hooks/chainClickable';
 import './style.css';
 import {rotateTransformCSSProp, stickCSSProps} from '@/util/css';
-import {LimbAngleProps, StickProps} from '@/util/types';
+import {LimbAngleProps, StickProps, TextBubbleProps} from '@/util/types';
 
 const Stick: FC<StickProps> = (props = Default) => {
-  const {bgColor, color, posId, customPos, dimensions, coord, children, onClick} = props;
+  const {bgColor, color, posId, customPos, dimensions, coord, childProps, children, onClick} = props;
   const hasCustomPose = posId === 'custom' && customPos;
   const {limbs, offsets} = !hasCustomPose ? Positions[posId ?? 'custom'] : customPos;
   const {width, height, thickness} = {...Default.dimensions, ...dimensions};
@@ -46,20 +46,20 @@ const Stick: FC<StickProps> = (props = Default) => {
           {renderLimb(legs?.right)}
         </div>
       </div>
-      {children?.map((child, idx) => {
+      {(childProps || children)?.map((child, idx) => {
         const {type} = child;
         let ChildComponent = null;
         switch (type) {
           case 'stick':
             ChildComponent = Stick;
-            break;
+            return;
           case 'text':
             ChildComponent = TextBubble;
             break;
           default:
             break;
         }
-        return ChildComponent && <ChildComponent {...child} key={`stickchild-${idx}`} />;
+        return ChildComponent && <ChildComponent {...(child as TextBubbleProps)} key={`stickchild-${idx}`} />;
       })}
       {/* </div> */}
     </div>

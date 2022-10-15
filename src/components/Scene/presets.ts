@@ -5,7 +5,7 @@ import {Coordinates, SceneProps} from '@/util/types';
 const DEFAULT_SCENE_SIZE = '100%';
 
 export const Default: Required<SceneProps> = {
-  children: [],
+  childProps: [],
   type: 'scene',
   bgColor: 'transparent',
   coord: {

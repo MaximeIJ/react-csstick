@@ -36,12 +36,14 @@ export type CommonProps<T = unknown> = Clickable & {
   color?: string;
   coord?: Coordinates;
   dimensions?: Partial<Dimensions>;
-  children?: Array<T extends CommonProps ? T : CommonProps>;
+  childProps?: Array<T extends CommonProps ? T : CommonProps>;
 };
 
 export type StickProps = CommonProps & {
   posId?: PosType;
   customPos?: StickPosition;
+  /** @deprecated use childProps instead */
+  children: Array<TextBubbleProps>
 };
 
 export type BaseCSSPropsInput = {
@@ -70,12 +72,12 @@ export type TextProps = {
 export type TextBubbleProps = CommonProps & TextProps;
 
 export type SceneProps = CommonProps & {
-  /** @deprecated (ignore for now) use children field instead */
+  /** @deprecated (ignore for now) use childProps field instead */
   sticks?: Array<StickProps>;
 };
 
 export type ComicProps = CommonProps & {
-  /** @deprecated (ignore for now) use children field instead */
+  /** @deprecated (ignore for now) use childProps field instead */
   scenes: Array<SceneProps>;
   layout: Array<Array<number>>;
 };
