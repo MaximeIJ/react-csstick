@@ -1,5 +1,4 @@
 import { StorybookConfig , ViteFinal } from '@storybook/builder-vite';
-import { mergeConfig } from 'vite';
 
 const viteFinal: ViteFinal = async (config, {configType}) => {
   // modify and return config
@@ -10,17 +9,27 @@ const viteFinal: ViteFinal = async (config, {configType}) => {
     // Your production configuration goes here.
   }
   // Merge custom configuration into the default config
-  return mergeConfig(config, {
-    // Add dependencies to pre-optimization
-    optimizeDeps: {
-      include: ['storybook-dark-mode']
-    }
-  });
+  return {
+    ...config,
+  };
 };
 
 const config: StorybookConfig  = {
-  stories: ['../src/stories/**/*.stories.mdx', '../src/stories/**/*.stories.@(js|jsx|ts|tsx)'],
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  stories: ['../stories/**/*.stories.mdx', '../src/stories/**/*.stories.@(ts|tsx|js|jsx)'],
+  logLevel: 'debug',
+  addons: [
+    // Addons are currently not working, need to upgrade/fix
+    // '@storybook/addon-storysource',
+    // '@storybook/addon-actions',
+    // '@storybook/addon-docs',
+    // '@storybook/addon-links',
+    // '@storybook/addon-viewport',
+    // '@storybook/addon-backgrounds',
+    // '@storybook/addon-a11y',
+    // '@storybook/addon-links',
+    // '@storybook/addon-essentials',
+    // '@storybook/addon-highlight',
+  ],
   core: {
     builder: '@storybook/builder-vite'
   },
@@ -28,4 +37,3 @@ const config: StorybookConfig  = {
   viteFinal,
 };
 export default config;
-// export const framework = '@storybook/react';

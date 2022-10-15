@@ -1,6 +1,6 @@
 {
   "name": "@maximeij/react-csstick",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "type": "module",
   "description": "CSS Stick figures and comics",
   "author": "Maxime IJ",
@@ -16,11 +16,9 @@
     "comic",
     "react"
   ],
-  "main": "./lib/react-csstick.umd.js",
-  "module": "./lib/react-csstick.js",
-  "types": "./lib/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "README.md"
   ],
   "exports": {
     ".": {
