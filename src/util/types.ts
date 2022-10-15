@@ -43,7 +43,7 @@ export type StickProps = CommonProps & {
   posId?: PosType;
   customPos?: StickPosition;
   /** @deprecated use childProps instead */
-  children: Array<TextBubbleProps>
+  children: Array<TextBubbleProps>;
 };
 
 export type BaseCSSPropsInput = {

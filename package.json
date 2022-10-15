@@ -81,11 +81,14 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "docs": "rm -rf ./docs && npm run build-storybook-docs && mv ./storybook-static ./docs",
     "preview": "vite preview",
     "lint": "eslint . --fix && prettier -w .",
-    "prepublishOnly": "clean-package && echo ⚠ Remember to run npx clean-package restore ⚠",
-    "storybook": "sb dev --no-manager-cache -p 8009",
-    "build-storybook": "sb build"
+    "prepublishOnly": "npm run lint && npm run docs && clean-package && echo ⚠ Remember to run npx clean-package restore ⚠",
+    "storybook": "sb dev --no-manager-cache -p 8008",
+    "storybook-docs": "sb dev --docs --no-manager-cache -p 8009",
+    "build-storybook": "sb build",
+    "build-storybook-docs": "sb build --docs --no-manager-cache"
   },
   "publishConfig": {
     "access": "public"
