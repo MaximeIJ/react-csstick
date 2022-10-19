@@ -9,10 +9,10 @@
       window.CONFIG_TYPE = 'PRODUCTION';
       window.LOGLEVEL = 'debug';
       window.FRAMEWORK_OPTIONS = {};
-      window.CHANNEL_OPTIONS = {};
-      window.FEATURES = {"postcss":true,"warnOnLegacyHierarchySeparator":true,"buildStoriesJson":false,"storyStoreV7":true,"breakingChangesV7":true,"interactionsDebugger":false,"babelModeV7":true,"argTypeTargetsV7":true,"previewMdx2":false};
+      window.CHANNEL_OPTIONS = {"allowFunction":false,"maxDepth":10};
+      window.FEATURES = {"postcss":false,"warnOnLegacyHierarchySeparator":false,"buildStoriesJson":true,"storyStoreV7":true,"breakingChangesV7":true,"interactionsDebugger":false,"babelModeV7":true,"argTypeTargetsV7":true,"previewMdx2":true};
       window.STORIES = [{"titlePrefix":"","directory":"./src/stories","files":"**/*.stories.tsx","importPathMatcher":"^\\.[\\\\/](?:src[\\\\/]stories(?:[\\\\/](?!\\.)(?:(?:(?!(?:^|[\\\\/])\\.).)*?)[\\\\/]|[\\\\/]|$)(?!\\.)(?=.)[^\\\\/]*?\\.stories\\.tsx)$"}];
-      window.DOCS_OPTIONS = {"docsMode":true,"enabled":true,"defaultName":"Docs","docsPage":true};
+      window.DOCS_OPTIONS = {"enabled":true,"defaultName":"Docs","docsPage":true};
       window.SERVER_CHANNEL_URL = undefined;
 
       // We do this so that "module && module.hot" etc. in Storybook source code
