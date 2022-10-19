@@ -8,7 +8,7 @@
   "bugs": {
     "url": "https://github.com/MaximeIJ/react-csstick/issues"
   },
-  "homepage": "https://github.com/MaximeIJ/react-csstick#readme",
+  "homepage": "http://MaximeIJ.github.io/react-csstick",
   "keywords": [
     "css",
     "css-art",
@@ -58,6 +58,7 @@
     "@storybook/cli": "^7.0.0-alpha.38",
     "@storybook/react": "^7.0.0-alpha.38",
     "@storybook/react-vite": "^7.0.0-alpha.38",
+    "@storybook/storybook-deployer": "^2.8.12",
     "@types/react": "^18.0.21",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.40.0",
@@ -70,6 +71,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.10",
+    "gh-pages": "^4.0.0",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "storybook": "^7.0.0-alpha.38",
@@ -81,14 +83,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "docs": "rm -rf ./docs && npm run build-storybook-docs && mv ./storybook-static ./docs",
+    "docs": "rm -rf ./docs && npm run build-storybook && mv ./storybook-static ./docs",
     "preview": "vite preview",
     "lint": "eslint . --fix && prettier -w .",
     "prepublishOnly": "npm run lint && npm run docs && clean-package && echo ⚠ Remember to run npx clean-package restore ⚠",
     "storybook": "sb dev --no-manager-cache -p 8008",
     "storybook-docs": "sb dev --docs --no-manager-cache -p 8009",
     "build-storybook": "sb build",
-    "build-storybook-docs": "sb build --docs --no-manager-cache"
+    "build-storybook-docs": "sb build --docs --no-manager-cache",
+    "gh": "gh-pages -d docs"
   },
   "publishConfig": {
     "access": "public"
