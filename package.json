@@ -83,7 +83,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "docs": "rm -rf ./docs && npm run build-storybook && mv ./storybook-static ./docs",
+    "docs": "rm -rf ./docs && npm run build-storybook && mv ./storybook-static ./docs && npm run gh",
     "preview": "vite preview",
     "lint": "eslint . --fix && prettier -w .",
     "prepublishOnly": "npm run lint && npm run docs && clean-package && echo ⚠ Remember to run npx clean-package restore ⚠",
