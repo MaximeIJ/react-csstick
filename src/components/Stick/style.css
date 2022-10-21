@@ -57,12 +57,11 @@
   transform-origin: top center;
 }
 
-.arms > div:last-child, .legs > div:last-child {
+.arms > div:last-child,
+.legs > div:last-child {
   /* transform-origin: bottom left; */
   left: calc(-1 * var(--t));
-  transform: scaleX(-1) 
-    rotate(var(--angle-0, var(--base-0))) 
-    translate(calc(-0.5 * var(--t)));
+  transform: scaleX(-1) rotate(var(--angle-0, var(--base-0))) translate(calc(-0.5 * var(--t)));
 }
 
 .arms > div,

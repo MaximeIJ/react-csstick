@@ -75,8 +75,8 @@ export const baseCSSProps = (input: BaseCSSPropsInput): CSSProperties => {
  * @param prefix Prefix of the CSS variable name
  * @returns CSSProperties object with the inputs processed where needed
  */
- export const anglesCSSProps = (input: number | Array<number>, prefix: string): CSSProperties => {
-  const angles = typeof input === 'number' ? [input] : input.slice(0,3);
+export const anglesCSSProps = (input: number | Array<number>, prefix: string): CSSProperties => {
+  const angles = typeof input === 'number' ? [input] : input.slice(0, 3);
   const result: CSSProperties = {};
   angles.forEach((angle: number, idx: number) => {
     const varName = `--${prefix}-${idx}` as keyof CSSProperties;
@@ -84,7 +84,7 @@ export const baseCSSProps = (input: BaseCSSPropsInput): CSSProperties => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     result[varName] = deg(angle);
-  })
+  });
   return result;
 };
 

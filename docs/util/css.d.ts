@@ -47,18 +47,25 @@ export declare const rotateTransformCSSProp: (angle?: number) => CSSProperties;
 /**
  *
  * @param input Subset of StickProps needed for dynamic CSS props
- * @returns CSSProperties object with the inputs process where needed
+ * @returns CSSProperties object with the inputs processed where needed
  */
 export declare const baseCSSProps: (input: BaseCSSPropsInput) => CSSProperties;
 /**
  *
  * @param input Subset of StickProps needed for dynamic CSS props
- * @returns CSSProperties object with the inputs process where needed
+ * @param prefix Prefix of the CSS variable name
+ * @returns CSSProperties object with the inputs processed where needed
+ */
+export declare const anglesCSSProps: (input: number | Array<number>, prefix: string) => CSSProperties;
+/**
+ *
+ * @param input Subset of StickProps needed for dynamic CSS props
+ * @returns CSSProperties object with the inputs processed where needed
  */
 export declare const stickCSSProps: (input: StickCSSPropsInput) => CSSProperties;
 /**
  *
  * @param input Subset of StickProps needed for dynamic CSS props
- * @returns CSSProperties object with the inputs process where needed
+ * @returns CSSProperties object with the inputs processed where needed
  */
 export declare const textCSSProps: (input: TextProps) => CSSProperties;

@@ -10,11 +10,11 @@ export declare type Coordinates = {
 export declare type Side = 'left' | 'right';
 export declare type PosType = 'default' | 'custom' | 'pointL' | 'pointR' | 'sitL' | 'walkL' | 'walkR';
 export declare type LimbAngleProps = {
-    angle: number;
+    angle: number | Array<number>;
 };
 export declare type LimbsProps = Partial<Record<Side, LimbAngleProps>>;
 export declare type LimbAngles = {
-    base?: number;
+    base?: number | Array<number>;
     arms?: LimbsProps;
     legs?: LimbsProps;
 };
@@ -49,7 +49,7 @@ export declare type BaseCSSPropsInput = {
     bgColor?: string;
 };
 export declare type StickCSSPropsInput = BaseCSSPropsInput & {
-    base?: number;
+    base?: number | Array<number>;
     offsets?: Coordinates;
 };
 export declare type TextProps = {

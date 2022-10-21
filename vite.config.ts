@@ -8,7 +8,7 @@ import dts from 'vite-plugin-dts';
 export default defineConfig({
   plugins: [
     react({
-			exclude: /\.stories\.(t|j)sx?$/,
+      exclude: /\.stories\.(t|j)sx?$/,
     }),
     dts({
       insertTypesEntry: true,
