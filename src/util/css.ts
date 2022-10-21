@@ -56,7 +56,7 @@ export const rotateTransformCSSProp = (angle?: number) =>
 /**
  *
  * @param input Subset of StickProps needed for dynamic CSS props
- * @returns CSSProperties object with the inputs process where needed
+ * @returns CSSProperties object with the inputs processed where needed
  */
 export const baseCSSProps = (input: BaseCSSPropsInput): CSSProperties => {
   const {bgColor, color, width, height, thickness} = input;
@@ -72,13 +72,32 @@ export const baseCSSProps = (input: BaseCSSPropsInput): CSSProperties => {
 /**
  *
  * @param input Subset of StickProps needed for dynamic CSS props
- * @returns CSSProperties object with the inputs process where needed
+ * @param prefix Prefix of the CSS variable name
+ * @returns CSSProperties object with the inputs processed where needed
+ */
+ export const anglesCSSProps = (input: number | Array<number>, prefix: string): CSSProperties => {
+  const angles = typeof input === 'number' ? [input] : input.slice(0,3);
+  const result: CSSProperties = {};
+  angles.forEach((angle: number, idx: number) => {
+    const varName = `--${prefix}-${idx}` as keyof CSSProperties;
+    // TS can't resolve the dynamic variable name
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    result[varName] = deg(angle);
+  })
+  return result;
+};
+
+/**
+ *
+ * @param input Subset of StickProps needed for dynamic CSS props
+ * @returns CSSProperties object with the inputs processed where needed
  */
 export const stickCSSProps = (input: StickCSSPropsInput): CSSProperties => {
   const {bgColor, color, width, height, thickness, base, coord, offsets} = input;
   return {
     ...baseCSSProps({bgColor, color, width, height, thickness}),
-    ['--angle']: deg(base ?? 0),
+    ...anglesCSSProps(base ?? 0, 'base'),
     top: `calc(${coord?.y ?? 0} - ${offsets?.y ?? '0%'})`,
     left: `calc(${coord?.x ?? 0} - ${offsets?.x ?? '0%'})`,
   } as CSSProperties;
@@ -87,7 +106,7 @@ export const stickCSSProps = (input: StickCSSPropsInput): CSSProperties => {
 /**
  *
  * @param input Subset of StickProps needed for dynamic CSS props
- * @returns CSSProperties object with the inputs process where needed
+ * @returns CSSProperties object with the inputs processed where needed
  */
 export const textCSSProps = (input: TextProps): CSSProperties => {
   const {font, fontSize, fontWeight, borderColor, borderRadius} = input;

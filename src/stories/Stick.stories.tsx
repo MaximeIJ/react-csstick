@@ -8,9 +8,6 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-  // Not working right now
-  // args: StickPresets.Default,
-  // argTypes: typeof Stick,
 } as StoryObj<StickProps>;
 
 const BaseBig = {
@@ -56,18 +53,18 @@ export const Weirdo: StoryObj<StickProps> = {
         base: 10,
         arms: {
           left: {
-            angle: -53,
+            angle: [63, -43, 48],
           },
           right: {
-            angle: 133,
+            angle: [20, 30, 40],
           },
         },
         legs: {
           left: {
-            angle: -25,
+            angle: [5, 34, -107],
           },
           right: {
-            angle: 95,
+            angle: [20, 1, 70],
           },
         },
       },

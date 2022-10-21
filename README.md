@@ -28,6 +28,6 @@ import {Comic, ComicPresets, type ComicProps} from '@maximeij/react-csstick';
 
 ### Coming soon
 
-- Limb joints (elbow, knee, etc)
 - Unit Tests
 - Animations
+- Working Storybooks

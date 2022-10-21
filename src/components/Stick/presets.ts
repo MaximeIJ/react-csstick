@@ -31,10 +31,10 @@ export const Positions: Record<PosType, StickPosition> = {
   default: Default.customPos,
   custom: {},
   pointL: {
-    limbs: {...Default.customPos.limbs, arms: {left: {angle: 89}}},
+    limbs: {...Default.customPos.limbs, arms: {left: {angle: [75, 15]}}},
   },
   pointR: {
-    limbs: {...Default.customPos.limbs, arms: {right: {angle: -89}}},
+    limbs: {...Default.customPos.limbs, arms: {right: {angle: [75, 15]}}},
   },
   sitL: {
     limbs: {

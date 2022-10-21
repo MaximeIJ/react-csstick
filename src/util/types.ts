@@ -12,13 +12,13 @@ export type Coordinates = {
 export type Side = 'left' | 'right';
 export type PosType = 'default' | 'custom' | 'pointL' | 'pointR' | 'sitL' | 'walkL' | 'walkR';
 export type LimbAngleProps = {
-  angle: number;
+  angle: number | Array<number>;
   // joint?: number;
 };
 export type LimbsProps = Partial<Record<Side, LimbAngleProps>>;
 
 export type LimbAngles = {
-  base?: number;
+  base?: number | Array<number>;
   arms?: LimbsProps;
   legs?: LimbsProps;
 };
@@ -56,7 +56,7 @@ export type BaseCSSPropsInput = {
 };
 
 export type StickCSSPropsInput = BaseCSSPropsInput & {
-  base?: number;
+  base?: number | Array<number>;
   offsets?: Coordinates;
 };
 
