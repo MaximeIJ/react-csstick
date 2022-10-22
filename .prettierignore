@@ -6,6 +6,7 @@
 # production
 /docs
 /lib
+/storybook-static
 
 # debug
 npm-debug.log*
