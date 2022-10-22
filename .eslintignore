@@ -6,7 +6,7 @@
 # production
 /docs
 /lib
-esbuild.js
+/storybook-static
 
 # debug
 npm-debug.log*
