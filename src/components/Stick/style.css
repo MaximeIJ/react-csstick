@@ -2,6 +2,7 @@
   width: var(--w);
   height: var(--h);
   background-color: transparent;
+  box-sizing: content-box;
   padding: 0;
   --bh: calc(var(--h) * 0.2);
   position: absolute;
