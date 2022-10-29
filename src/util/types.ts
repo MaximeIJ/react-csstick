@@ -13,7 +13,6 @@ export type Side = 'left' | 'right';
 export type PosType = 'default' | 'custom' | 'pointL' | 'pointR' | 'sitL' | 'walkL' | 'walkR';
 export type LimbAngleProps = {
   angle: number | Array<number>;
-  // joint?: number;
 };
 export type LimbsProps = Partial<Record<Side, LimbAngleProps>>;
 
@@ -32,6 +31,7 @@ export type Clickable = {
 export type CommonProps<T = unknown> = Clickable & {
   id: string;
   type: 'common' | 'stick' | 'text' | 'scene' | 'comic';
+  lineStyle?: 'sketch' | '';
   bgColor?: string;
   color?: string;
   coord?: Coordinates;
@@ -72,12 +72,12 @@ export type TextProps = {
 export type TextBubbleProps = CommonProps & TextProps;
 
 export type SceneProps = CommonProps & {
-  /** @deprecated (ignore for now) use childProps field instead */
+  /** @deprecated use childProps field instead */
   sticks?: Array<StickProps>;
 };
 
 export type ComicProps = CommonProps & {
-  /** @deprecated (ignore for now) use childProps field instead */
+  /** @deprecated use childProps field instead */
   scenes: Array<SceneProps>;
   layout: Array<Array<number>>;
 };

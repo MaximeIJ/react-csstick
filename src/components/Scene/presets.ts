@@ -19,6 +19,7 @@ export const Default: Required<SceneProps> = {
     thickness: StickPresets.Default.dimensions.thickness,
   },
   id: '',
+  lineStyle: '',
   onClick: () => null,
   sticks: [],
 };

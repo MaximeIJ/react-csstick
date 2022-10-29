@@ -1,4 +1,4 @@
-import {PosType, StickPosition, StickProps} from '@/util/types';
+import {Dimensions, PosType, StickPosition, StickProps} from '@/util/types';
 
 const DEFAULT_STICK_SIZE = '12rem';
 
@@ -20,8 +20,9 @@ export const Default: Required<StickProps> = {
     width: DEFAULT_STICK_SIZE,
     height: DEFAULT_STICK_SIZE,
     thickness: '2px',
-  },
+  } as Required<Dimensions>,
   id: 'stick',
+  lineStyle: '',
   onClick: () => null,
   posId: 'default',
   type: 'stick',

@@ -17,6 +17,7 @@ export const Default: Required<TextBubbleProps> = {
     thickness: '2px',
   },
   id: 'text bubble',
+  lineStyle: '',
   onClick: () => null,
   text: '',
   font: 'Comic Sans MS, Comic Sans, cursive',

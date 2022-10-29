@@ -26,15 +26,21 @@ const simpleSceneArgs: SceneProps = {
   },
 };
 
+delete simpleSceneArgs.lineStyle;
+
 const simpleComicArgs: ComicProps = {
   ...baseComicArgs,
   layout: [
     [5, 3],
     [5, 3, 4],
   ],
-  scenes: [simpleSceneArgs, simpleSceneArgs, simpleSceneArgs, simpleSceneArgs, simpleSceneArgs],
+  childProps: [simpleSceneArgs, simpleSceneArgs, simpleSceneArgs, simpleSceneArgs, simpleSceneArgs],
 };
 
 export const Big: StoryObj<ComicProps> = {
   args: simpleComicArgs,
+};
+
+export const Sketch: StoryObj<ComicProps> = {
+  args: {...simpleComicArgs, lineStyle: 'sketch'},
 };

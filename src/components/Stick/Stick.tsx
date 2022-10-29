@@ -6,14 +6,14 @@ import {Default, Positions} from './presets';
 
 import {chainCall, chainClickable} from '@/hooks/chainClickable';
 import './style.css';
-import {anglesCSSProps, rotateTransformCSSProp, stickCSSProps} from '@/util/css';
+import {anglesCSSProps, arbitraryCSSProps, multCss, rotateTransformCSSProp, stickCSSProps} from '@/util/css';
 import {LimbAngleProps, StickProps, TextBubbleProps} from '@/util/types';
 
 // todo: move to props
 const animated = false;
 
 const Stick: FC<StickProps> = (props = Default) => {
-  const {bgColor, color, posId, customPos, dimensions, coord, childProps, children, onClick} = props;
+  const {bgColor, color, posId, customPos, dimensions, coord, childProps, lineStyle, onClick} = props;
   const hasCustomPose = posId === 'custom' && customPos;
   const {limbs, offsets} = !hasCustomPose ? Positions[posId ?? 'custom'] : customPos;
   const {width, height, thickness} = {...Default.dimensions, ...dimensions};
@@ -32,7 +32,7 @@ const Stick: FC<StickProps> = (props = Default) => {
 
   const renderLimb = (p?: LimbAngleProps) => {
     const angleProps = p?.angle;
-    // todo: fix animation when implemented
+    // todo: fix animation when implemented or use @Property instead
     const rotateTransform = animated && typeof angleProps === 'number' ? rotateTransformCSSProp(angleProps) : {};
     const angleVariables = angleProps ? anglesCSSProps(angleProps, 'angle') : {};
     return (
@@ -44,10 +44,12 @@ const Stick: FC<StickProps> = (props = Default) => {
     );
   };
 
+  const bodyStyle = lineStyle === 'sketch' && thickness ? arbitraryCSSProps({['--t']: multCss(thickness, 1.75)}) : {};
+
   return (
-    <div className="stick" style={stickStyle} onClick={chainCall(onClick)}>
+    <div className={`${lineStyle ?? ''} stick`} style={stickStyle} onClick={chainCall(onClick)}>
       <div className="head"></div>
-      <div className="body">
+      <div className="body" style={bodyStyle}>
         <div className="arms">
           {renderLimb(arms?.left)}
           {renderLimb(arms?.right)}
@@ -57,7 +59,7 @@ const Stick: FC<StickProps> = (props = Default) => {
           {renderLimb(legs?.right)}
         </div>
       </div>
-      {(childProps || children)?.map((child, idx) => {
+      {childProps?.map((child, idx) => {
         const {type} = child;
         let ChildComponent = null;
         switch (type) {

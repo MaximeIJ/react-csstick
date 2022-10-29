@@ -23,12 +23,17 @@ const simpleStickArgs: StickProps = {
   coord: Directions.SW,
 };
 
+delete simpleStickArgs.lineStyle;
+
 const simpleSceneArgs: SceneProps = {
   ...baseSceneArgs,
   childProps: [simpleStickArgs],
-  sticks: [simpleStickArgs],
 };
 
 export const Big: StoryObj<SceneProps> = {
   args: simpleSceneArgs,
+};
+
+export const Sketch: StoryObj<SceneProps> = {
+  args: {...simpleSceneArgs, lineStyle: 'sketch'},
 };

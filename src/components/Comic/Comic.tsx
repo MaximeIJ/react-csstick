@@ -8,7 +8,7 @@ import {baseCSSProps, divCss, multCss} from '@/util/css';
 import {ComicProps} from '@/util/types';
 import {chainClickable} from '@/hooks/chainClickable';
 
-const Comic: FC<ComicProps> = ({bgColor, color, dimensions, layout, onClick, scenes}) => {
+const Comic: FC<ComicProps> = ({bgColor, childProps, color, dimensions, layout, lineStyle, onClick, scenes}) => {
   const {width, height, thickness} = dimensions ?? Default.dimensions;
 
   const comicStyle = baseCSSProps({
@@ -27,14 +27,20 @@ const Comic: FC<ComicProps> = ({bgColor, color, dimensions, layout, onClick, sce
       })
       .flat();
 
+    const sceneChildren = childProps?.filter(({type}) => type === 'scene');
+
     return (
       <div className="row">
         {normalized.map((nf, idx) => {
-          const sp = scenes[idx];
+          const sp = (sceneChildren ?? scenes)[idx];
           const normalizedProps = sp
             ? {
+                bgColor,
+                color,
+                lineStyle,
                 ...sp,
                 dimensions: {
+                  thickness,
                   ...sp.dimensions,
                   width: multCss('100%', nf),
                   height: divCss(dimensions?.height ?? '', layout.length || 1),
@@ -48,7 +54,7 @@ const Comic: FC<ComicProps> = ({bgColor, color, dimensions, layout, onClick, sce
   }, [dimensions?.height, layout, scenes]);
 
   return (
-    <div className="container" style={comicStyle}>
+    <div className={`${lineStyle ?? ''} comic`} style={comicStyle}>
       {panels}
     </div>
   );

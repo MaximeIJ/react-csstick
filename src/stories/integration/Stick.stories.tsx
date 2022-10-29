@@ -31,3 +31,7 @@ const simpleStickArgs: StickProps = {
 export const Big: StoryObj<StickProps> = {
   args: simpleStickArgs,
 };
+
+export const Sketch: StoryObj<StickProps> = {
+  args: {...simpleStickArgs, lineStyle: 'sketch'},
+};

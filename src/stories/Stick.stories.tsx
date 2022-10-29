@@ -24,7 +24,7 @@ const BaseHuge = {
   dimensions: {
     width: '90vmin',
     height: '90vmin',
-    thickness: '0.5vmin',
+    thickness: '0.75vmin',
   },
 };
 
@@ -70,5 +70,12 @@ export const Weirdo: StoryObj<StickProps> = {
       },
     },
     posId: 'custom',
+  },
+};
+
+export const SketchWeirdo: StoryObj<StickProps> = {
+  args: {
+    ...Weirdo.args,
+    lineStyle: 'sketch',
   },
 };
