@@ -1,4 +1,5 @@
-# react-csstick
+# react-csstick 
+[![npm (scoped)](https://img.shields.io/npm/v/@maximeij/react-csstick?color=green&label=npm%20package&logo=logo)](https://www.npmjs.com/package/@maximeij/react-csstick)
 
 CSS Stick figures and comics
 
