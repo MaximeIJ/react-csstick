@@ -93,7 +93,7 @@ export const anglesCSSProps = (input: number | Array<number>, prefix: string): C
  * @param input Subset of StickProps needed for dynamic CSS props
  * @returns CSSProperties object with the inputs processed where needed
  */
- export const stickCSSProps = (input: StickCSSPropsInput): CSSProperties => {
+export const stickCSSProps = (input: StickCSSPropsInput): CSSProperties => {
   const {bgColor, color, width, height, thickness, base, coord, offsets} = input;
   return {
     ...baseCSSProps({bgColor, color, width, height, thickness}),
@@ -126,4 +126,4 @@ export const textCSSProps = (input: TextProps): CSSProperties => {
  */
 export const arbitraryCSSProps = (input: Record<string, string>): CSSProperties => {
   return input as CSSProperties;
-}
+};

@@ -31,13 +31,15 @@
   top: calc(-0.35 * var(--t));
 }
 
-.body, .body::after  {
+.body,
+.body::after {
   margin: 0 auto;
   --sh: var(--bh);
   height: var(--sh);
 }
 
-.body, .body div {
+.body,
+.body div {
   /** Solid color body */
   background-color: transparent;
   border: 0;
@@ -45,7 +47,8 @@
   width: var(--bw);
 }
 
-.body::after, .body > div div::after {
+.body::after,
+.body > div div::after {
   content: '';
   position: absolute;
   left: 0;
@@ -120,7 +123,8 @@
   border-radius: var(--sbr);
 }
 
-.sketch .body::after, .sketch .body div::after {
+.sketch .body::after,
+.sketch .body div::after {
   clip-path: var(--scp);
 }
 
