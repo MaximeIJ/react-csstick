@@ -68,6 +68,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "custom:publish": "npm publish && npx clean-package restore && git restore . && git push",
     "docs": "rimraf ./docs && npm run build-storybook && mv ./storybook-static ./docs && npm run gh",
     "preview": "vite preview",
     "lint": "eslint . --fix && prettier -w .",
@@ -76,7 +77,10 @@
     "storybook-docs": "sb dev --docs --no-manager-cache -p 8009",
     "build-storybook": "sb build",
     "build-storybook-docs": "sb build --docs --no-manager-cache",
-    "gh": "gh-pages -d docs"
+    "gh": "gh-pages -d docs",
+    "publish:major": "npm version major && npm run custom:publish",
+    "publish:minor": "npm version minor && npm run custom:publish",
+    "publish:patch": "npm version patch && npm run custom:publish"
   },
   "publishConfig": {
     "access": "public"

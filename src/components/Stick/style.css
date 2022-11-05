@@ -4,6 +4,7 @@
   background-color: transparent;
   padding: 0;
   --bh: calc(var(--h) * 0.2);
+  /* todo: when --h < ~50rem, limb segments can be disjointed */
   position: absolute;
   transition: all 0.25s ease-in-out;
   /* @Property on angle variables can solve animation */
