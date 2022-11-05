@@ -3,3 +3,4 @@ import type { SceneProps } from '../../../../../../../../src/util/types';
 declare const _default: StoryObj<SceneProps>;
 export default _default;
 export declare const Big: StoryObj<SceneProps>;
+export declare const Sketch: StoryObj<SceneProps>;

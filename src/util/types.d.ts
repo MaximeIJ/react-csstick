@@ -28,6 +28,7 @@ export declare type Clickable = {
 export declare type CommonProps<T = unknown> = Clickable & {
     id: string;
     type: 'common' | 'stick' | 'text' | 'scene' | 'comic';
+    lineStyle?: 'sketch' | '';
     bgColor?: string;
     color?: string;
     coord?: Coordinates;
@@ -62,11 +63,11 @@ export declare type TextProps = {
 };
 export declare type TextBubbleProps = CommonProps & TextProps;
 export declare type SceneProps = CommonProps & {
-    /** @deprecated (ignore for now) use childProps field instead */
+    /** @deprecated use childProps field instead */
     sticks?: Array<StickProps>;
 };
 export declare type ComicProps = CommonProps & {
-    /** @deprecated (ignore for now) use childProps field instead */
+    /** @deprecated use childProps field instead */
     scenes: Array<SceneProps>;
     layout: Array<Array<number>>;
 };

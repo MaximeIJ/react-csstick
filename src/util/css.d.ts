@@ -69,3 +69,9 @@ export declare const stickCSSProps: (input: StickCSSPropsInput) => CSSProperties
  * @returns CSSProperties object with the inputs processed where needed
  */
 export declare const textCSSProps: (input: TextProps) => CSSProperties;
+/**
+ * Type Caster
+ * @param input A map of property name to value, both being freeform strings
+ * @returns A cast CSSProperties objects
+ */
+export declare const arbitraryCSSProps: (input: Record<string, string>) => CSSProperties;
