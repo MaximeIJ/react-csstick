@@ -53,9 +53,10 @@
   content: '';
   position: absolute;
   left: 0;
+  top: 0;
   background-color: var(--c);
   width: var(--bw);
-  height: var(--sh);
+  height: var(--sh, 100%);
   border-radius: var(--t);
 }
 
@@ -70,12 +71,12 @@
 }
 
 .legs {
-  top: calc(var(--bh) * 0.95);
+  top: calc(var(--bh) - calc(var(--t) * .5));
 }
 
 .arms div,
 .legs div {
-  display: inline-block;
+  display: block;
   transform-origin: top center;
 }
 
@@ -84,8 +85,9 @@
   position: absolute;
   top: 0;
   left: calc(-0.5 * var(--t));
-  --sh: calc(var(--bh) * 0.65);
-  height: var(--sh);
+  --s1h: calc(var(--bh) * 0.65);
+  --sh: var(--s1h);
+  height: var(--s1h);
   transform: rotate(var(--angle-0, var(--base-0)));
 }
 
@@ -97,19 +99,22 @@
 
 .arms > div > div,
 .legs > div > div {
-  top: calc(var(--bh) * 0.65 - var(--t) * 0.5);
+  top: calc(var(--s1h) - calc(var(--t) * .5));
   left: 0;
-  --sh: calc(var(--bh) * 0.5);
-  height: var(--sh);
+  --s2h: calc(var(--bh) * 0.5);
+  --sh: var(--s2h);
+  height: var(--s2h);
   transform: rotate(var(--angle-1, var(--base-1)));
 }
 
 .arms > div > div > div,
 .legs > div > div > div {
-  top: calc(var(--bh) * 0.5 - var(--t) * 0.5);
+  /* Under certain --h, the last segment gets disconnected if we don't do this */
+  top: calc(var(--s2h) - calc(var(--t) * .5));
   left: 0;
-  --sh: calc(var(--bh) * 0.15);
-  height: var(--sh);
+  --s3h: calc(var(--bh) * 0.15);
+  --sh: var(--s3h);
+  height: var(--s3h);
   transform: rotate(var(--angle-2, var(--base-2)));
 }
 
