@@ -21,7 +21,7 @@ const Scene: FC<SceneProps> = ({bgColor, childProps, color, dimensions, lineStyl
 
   return (
     <div className={`${lineStyle ?? ''} scene`} style={sceneStyle} onClick={() => onClick()}>
-      {(childProps ?? sticks)
+      {[...(childProps ?? []), ...(sticks ?? [])]
         ?.filter(({type}) => type === 'stick')
         .map(sp => ({bgColor, color, lineStyle, ...sp} as StickProps))
         .map((stickProps, idx) => (

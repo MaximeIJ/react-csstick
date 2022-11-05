@@ -32,7 +32,7 @@ const Comic: FC<ComicProps> = ({bgColor, childProps, color, dimensions, layout, 
     return (
       <div className="row">
         {normalized.map((nf, idx) => {
-          const sp = (sceneChildren ?? scenes)[idx];
+          const sp = [...(sceneChildren ?? []), ...(scenes ?? [])][idx];
           const normalizedProps = sp
             ? {
                 bgColor,
