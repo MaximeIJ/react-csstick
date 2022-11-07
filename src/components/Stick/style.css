@@ -67,7 +67,7 @@
 }
 
 .arms {
-  top: calc(var(--bh) * 0.05);
+  top: max(calc(var(--bh) * .05), calc(var(--t) * 1.75));
 }
 
 .legs {
