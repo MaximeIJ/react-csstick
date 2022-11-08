@@ -52,6 +52,7 @@
     "@vitejs/plugin-react": "^2.1.0",
     "@vitest/coverage-c8": "^0.25.0",
     "@vitest/ui": "latest",
+    "auto-changelog": "^2.4.0",
     "clean-package": "^2.1.1",
     "eslint": "8.25.0",
     "eslint-config-prettier": "^8.5.0",
@@ -86,7 +87,8 @@
     "publish:patch": "npm version patch && npm run custom:publish",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "publishConfig": {
     "access": "public"
