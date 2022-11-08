@@ -30,6 +30,9 @@ import {Comic, ComicPresets, type ComicProps} from '@maximeij/react-csstick';
 
 ### Coming soon
 
-- Unit Tests
 - Animations
 - Working Storybooks
+
+### Recent changes
+
+- [Changelog](CHANGELOG.md)
