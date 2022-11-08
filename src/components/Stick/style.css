@@ -67,11 +67,11 @@
 }
 
 .arms {
-  top: max(calc(var(--bh) * .05), calc(var(--t) * 1.75));
+  top: max(calc(var(--bh) * 0.05), calc(var(--t) * 1.75));
 }
 
 .legs {
-  top: calc(var(--bh) - calc(var(--t) * .5));
+  top: calc(var(--bh) - calc(var(--t) * 0.5));
 }
 
 .arms div,
@@ -99,7 +99,7 @@
 
 .arms > div > div,
 .legs > div > div {
-  top: calc(var(--s1h) - calc(var(--t) * .5));
+  top: calc(var(--s1h) - calc(var(--t) * 0.5));
   left: 0;
   --s2h: calc(var(--bh) * 0.5);
   --sh: var(--s2h);
@@ -110,7 +110,7 @@
 .arms > div > div > div,
 .legs > div > div > div {
   /* Under certain --h, the last segment gets disconnected if we don't do this */
-  top: calc(var(--s2h) - calc(var(--t) * .5));
+  top: calc(var(--s2h) - calc(var(--t) * 0.5));
   left: 0;
   --s3h: calc(var(--bh) * 0.15);
   --sh: var(--s3h);

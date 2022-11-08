@@ -1,0 +1,119 @@
+// Vitest Snapshot v1
+
+exports[`CSS props > anglesCSSProps returns css variables for one or more angles 1`] = `
+{
+  "--single-0": "1deg",
+}
+`;
+
+exports[`CSS props > anglesCSSProps returns css variables for one or more angles 2`] = `
+{
+  "--multi-0": "91deg",
+  "--multi-1": "6deg",
+  "--multi-2": "10deg",
+}
+`;
+
+exports[`CSS props > arbitraryCSSProps returns arbitrary css variables 1`] = `{}`;
+
+exports[`CSS props > arbitraryCSSProps returns arbitrary css variables 2`] = `
+{
+  "a": "b",
+  "c": "d",
+}
+`;
+
+exports[`CSS props > baseCSSProps returns optional css variables 1`] = `
+{
+  "--bgc": undefined,
+  "--c": undefined,
+  "--h": undefined,
+  "--t": undefined,
+  "--w": undefined,
+}
+`;
+
+exports[`CSS props > baseCSSProps returns optional css variables 2`] = `
+{
+  "--bgc": "#123",
+  "--c": "#456",
+  "--h": "1vmax",
+  "--t": "1pt",
+  "--w": "2vmin",
+}
+`;
+
+exports[`CSS props > rotateTransformCSSProp returns a css prop with a transform attribute for the optional value 1`] = `
+{
+  "transform": "rotate(89deg)",
+}
+`;
+
+exports[`CSS props > rotateTransformCSSProp returns a css prop with a transform attribute for the optional value 2`] = `
+{
+  "transform": "rotate(0deg)",
+}
+`;
+
+exports[`CSS props > stickCSSProps returns css variables for optional stick props 1`] = `
+{
+  "--base-0": "0deg",
+  "--bgc": undefined,
+  "--c": undefined,
+  "--h": undefined,
+  "--t": undefined,
+  "--w": undefined,
+  "left": "calc(0 - 0%)",
+  "top": "calc(0 - 0%)",
+}
+`;
+
+exports[`CSS props > stickCSSProps returns css variables for optional stick props 2`] = `
+{
+  "--base-0": "0deg",
+  "--bgc": "transparent",
+  "--c": "#888888",
+  "--h": undefined,
+  "--t": undefined,
+  "--w": undefined,
+  "left": "calc(0 - 0%)",
+  "top": "calc(0 - 0%)",
+}
+`;
+
+exports[`CSS props > stickCSSProps returns css variables for optional stick props 3`] = `
+{
+  "--base-0": "0deg",
+  "--bgc": "transparent",
+  "--c": "#888888",
+  "--h": undefined,
+  "--t": undefined,
+  "--w": undefined,
+  "left": "calc(10% - 10%)",
+  "top": "calc(1px - 1px)",
+}
+`;
+
+exports[`CSS props > textCSSProps returns css variables for optional text props 1`] = `
+{
+  "--bc": undefined,
+  "--br": undefined,
+  "--f": undefined,
+  "--fs": undefined,
+  "--fw": undefined,
+}
+`;
+
+exports[`CSS props > textCSSProps returns css variables for optional text props 2`] = `
+{
+  "--bc": "transparent",
+  "--br": "40%",
+  "--f": "Comic Sans MS, Comic Sans, cursive",
+  "--fs": "1.5rem",
+  "--fw": "normal",
+}
+`;
+
+exports[`formatters > rotate returns a css rotate of an optional angle, or 0 1`] = `"rotate(13deg)"`;
+
+exports[`formatters > rotate returns a css rotate of an optional angle, or 0 2`] = `"rotate(0deg)"`;

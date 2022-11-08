@@ -50,6 +50,8 @@
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.40.0",
     "@vitejs/plugin-react": "^2.1.0",
+    "@vitest/coverage-c8": "^0.25.0",
+    "@vitest/ui": "latest",
     "clean-package": "^2.1.1",
     "eslint": "8.25.0",
     "eslint-config-prettier": "^8.5.0",
@@ -63,7 +65,8 @@
     "storybook": "^7.0.0-alpha.46",
     "typescript": "^4.8.4",
     "vite": "^3.1.8",
-    "vite-plugin-dts": "^1.6.6"
+    "vite-plugin-dts": "^1.6.6",
+    "vitest": "^0.25.0"
   },
   "scripts": {
     "dev": "vite",
@@ -80,7 +83,10 @@
     "gh": "gh-pages -d docs",
     "publish:major": "npm version major && npm run custom:publish",
     "publish:minor": "npm version minor && npm run custom:publish",
-    "publish:patch": "npm version patch && npm run custom:publish"
+    "publish:patch": "npm version patch && npm run custom:publish",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run"
   },
   "publishConfig": {
     "access": "public"
