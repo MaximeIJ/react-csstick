@@ -76,7 +76,7 @@
     "docs": "rimraf ./docs && npm run build-storybook && mv ./storybook-static ./docs && npm run gh",
     "preview": "vite preview",
     "lint": "eslint . --fix && prettier -w .",
-    "prepublishOnly": "npm run build && npm run lint && npm run docs && clean-package && echo ⚠ Remember to run npx clean-package restore ⚠",
+    "prepublishOnly": "npm run build && npm run lint && npm run test:run && npm run docs && clean-package && echo ⚠ Remember to run npx clean-package restore ⚠",
     "storybook": "sb dev --no-manager-cache -p 8008",
     "storybook-docs": "sb dev --docs --no-manager-cache -p 8009",
     "build-storybook": "sb build",
