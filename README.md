@@ -32,6 +32,8 @@ import {Comic, ComicPresets, type ComicProps} from '@maximeij/react-csstick';
 
 - Animations
 - Working Storybooks
+- Improvements: Comic layout, Text Bubble style
+- Stick Accessories: Clothing, Items
 
 ### Recent changes
 
