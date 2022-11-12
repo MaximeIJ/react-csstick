@@ -48,8 +48,8 @@ export const Positions: Record<PosType, StickPosition> = {
       right: LimbAngles.legHalfSquat
     }},
     offsets: {
-      x: '0',
-      y: '7%'
+      x: '0px',
+      y: 'calc(var(--h) / -24)'
     }
   },
   pointL: {
@@ -63,7 +63,7 @@ export const Positions: Record<PosType, StickPosition> = {
       ...Default.customPos.limbs,
       legs: {left: {angle: 90}, right: {angle: 90}},
     },
-    offsets: {x: '0', y: '-3rem'},
+    offsets: {x: '0px', y: '-3rem'},
   },
   walkL: {},
   walkR: {},
