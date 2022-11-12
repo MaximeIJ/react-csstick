@@ -26,6 +26,7 @@ export default defineConfig({
       fileName: 'react-csstick',
     },
     cssCodeSplit: false,
+    sourcemap: false,
     outDir: 'lib',
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
