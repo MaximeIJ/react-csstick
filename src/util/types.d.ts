@@ -8,7 +8,8 @@ export declare type Coordinates = {
     y: string;
 };
 export declare type Side = 'left' | 'right';
-export declare type PosType = 'default' | 'custom' | 'pointL' | 'pointR' | 'sitL' | 'walkL' | 'walkR';
+export declare type PosType = 'default' | 'custom' | 'panik' | 'pointL' | 'pointR' | 'sitL' | 'walkL' | 'walkR';
+export declare type LimbPosType = 'default' | 'armPoint' | 'armHip' | 'armHeadHold' | 'legHalfSquat';
 export declare type LimbAngleProps = {
     angle: number | Array<number>;
 };
