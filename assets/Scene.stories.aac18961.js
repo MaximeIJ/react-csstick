@@ -1,0 +1,2 @@
+import{S as e,b as t}from"./Comic.2e5d2574.js";import"./index.f306b241.js";import"./iframe.a811c907.js";import"./jsx-runtime.c00474f3.js";const a={component:e,parameters:{layout:"centered"}},s={...t,dimensions:{width:"50vmin",height:"30vmin",thickness:"3px"}},m={args:t},c={args:s},p=["Default","Big"];export{c as Big,m as Default,p as __namedExportsOrder,a as default};
+//# sourceMappingURL=Scene.stories.aac18961.js.map

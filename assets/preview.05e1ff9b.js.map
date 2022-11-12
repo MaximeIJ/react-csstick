@@ -1,1 +1,0 @@
-{"version":3,"file":"preview.05e1ff9b.js","sources":["../../.storybook/preview.tsx"],"sourcesContent":["import React from 'react';\n\nexport const decorators = [StoryFn => <StoryFn />];\n"],"names":["decorators","StoryFn"],"mappings":"uGAEO,MAAMA,EAAa,CAACC,KAAYA,EAAO,CAAA,CAAA,CAAG"}
