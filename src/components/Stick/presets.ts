@@ -1,6 +1,14 @@
-import {Dimensions, PosType, StickPosition, StickProps} from '@/util/types';
+import {Dimensions, LimbAngleProps, LimbPosType, PosType, StickPosition, StickProps} from '@/util/types';
 
 const DEFAULT_STICK_SIZE = '12rem';
+
+export const LimbAngles: Record<LimbPosType, LimbAngleProps> = {
+  default: { angle: [10, 0, -180]},
+  armPoint: {angle: [75, 15]},
+  armHip: {angle: [75, -85, 10]},
+  armHeadHold: {angle: [110, 80, -30]},
+  legHalfSquat: {angle: [50, -50, 90]}
+};
 
 export const Default: Required<StickProps> = {
   childProps: [],
@@ -13,7 +21,7 @@ export const Default: Required<StickProps> = {
   },
   customPos: {
     limbs: {
-      base: 10,
+      base: [10, 0, -180],
     },
   },
   dimensions: {
@@ -31,11 +39,24 @@ export const Default: Required<StickProps> = {
 export const Positions: Record<PosType, StickPosition> = {
   default: Default.customPos,
   custom: {},
+  panik: {
+    limbs: {...Default.customPos.limbs, arms: {
+      left: LimbAngles.armHeadHold,
+      right: LimbAngles.armHeadHold
+    }, legs: {
+      left: LimbAngles.legHalfSquat,
+      right: LimbAngles.legHalfSquat
+    }},
+    offsets: {
+      x: '0',
+      y: '7%'
+    }
+  },
   pointL: {
-    limbs: {...Default.customPos.limbs, arms: {left: {angle: [75, 15]}}},
+    limbs: {...Default.customPos.limbs, arms: {left: LimbAngles.armPoint}},
   },
   pointR: {
-    limbs: {...Default.customPos.limbs, arms: {right: {angle: [75, 15]}}},
+    limbs: {...Default.customPos.limbs, arms: {right: LimbAngles.armPoint}},
   },
   sitL: {
     limbs: {
@@ -47,3 +68,4 @@ export const Positions: Record<PosType, StickPosition> = {
   walkL: {},
   walkR: {},
 };
+

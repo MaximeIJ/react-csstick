@@ -43,6 +43,13 @@ export const Point: StoryObj<StickProps> = {
   },
 };
 
+export const Panik: StoryObj<StickProps> = {
+  args: {
+    ...BaseHuge,
+    posId: 'panik',
+  },
+};
+
 export const Weirdo: StoryObj<StickProps> = {
   args: {
     ...BaseHuge,

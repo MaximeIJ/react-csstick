@@ -10,7 +10,8 @@ export type Coordinates = {
 };
 
 export type Side = 'left' | 'right';
-export type PosType = 'default' | 'custom' | 'pointL' | 'pointR' | 'sitL' | 'walkL' | 'walkR';
+export type PosType = 'default' | 'custom' | 'panik' |'pointL' | 'pointR' | 'sitL' | 'walkL' | 'walkR';
+export type LimbPosType = 'default' | 'armPoint' | 'armHip' | 'armHeadHold' | 'legHalfSquat';
 export type LimbAngleProps = {
   angle: number | Array<number>;
 };
