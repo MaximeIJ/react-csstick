@@ -85,7 +85,7 @@
   position: absolute;
   top: 0;
   left: calc(-0.5 * var(--t));
-  --s1h: calc(var(--bh) * 0.65);
+  --s1h: calc(var(--bh) * 0.7);
   --sh: var(--s1h);
   height: var(--s1h);
   transform: rotate(var(--angle-0, var(--base-0)));
@@ -101,7 +101,7 @@
 .legs > div > div {
   top: calc(var(--s1h) - calc(var(--t) * 0.5));
   left: 0;
-  --s2h: calc(var(--bh) * 0.5);
+  --s2h: calc(var(--bh) * 0.7);
   --sh: var(--s2h);
   height: var(--s2h);
   transform: rotate(var(--angle-1, var(--base-1)));
@@ -112,7 +112,7 @@
   /* Under certain --h, the last segment gets disconnected if we don't do this */
   top: calc(var(--s2h) - calc(var(--t) * 0.5));
   left: 0;
-  --s3h: calc(var(--bh) * 0.15);
+  --s3h: calc(var(--bh) * 0.2);
   --sh: var(--s3h);
   height: var(--s3h);
   transform: rotate(var(--angle-2, var(--base-2)));
