@@ -8,7 +8,17 @@ import {baseCSSProps, divCss, multCss} from '@/util/css';
 import {ComicProps} from '@/util/types';
 import {chainClickable} from '@/hooks/chainClickable';
 
-const Comic: FC<ComicProps> = ({bgColor, childProps, color, dimensions, layout, lineStyle, onClick, scenes}) => {
+const Comic: FC<ComicProps> = ({
+  id = 'comic',
+  bgColor,
+  childProps,
+  color,
+  dimensions,
+  layout,
+  lineStyle,
+  onClick,
+  scenes,
+}) => {
   const {width, height, thickness} = dimensions ?? Default.dimensions;
 
   const comicStyle = baseCSSProps({
@@ -47,14 +57,14 @@ const Comic: FC<ComicProps> = ({bgColor, childProps, color, dimensions, layout, 
                 },
               }
             : undefined;
-          return normalizedProps && <Scene key={`scene-${idx}`} {...normalizedProps} onClick={onClick} />;
+          return normalizedProps && <Scene key={`scene-${idx}`} onClick={onClick} {...normalizedProps} />;
         })}
       </div>
     );
   }, [dimensions?.height, layout, scenes]);
 
   return (
-    <div className={`${lineStyle ?? ''} comic`} style={comicStyle}>
+    <div className={`${lineStyle ?? ''} comic`} style={comicStyle} id={id || undefined}>
       {panels}
     </div>
   );

@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 
-import {chainCall, chainClickable} from '../../hooks/chainClickable';
+import {chainClickable} from '../../hooks/chainClickable';
 
 import {Default} from './presets';
 
@@ -9,8 +9,7 @@ import {stickCSSProps, textCSSProps} from '@/util/css';
 import {TextBubbleProps} from '@/util/types';
 
 const TextBubble: FC<TextBubbleProps> = (props = Default) => {
-  const {font, fontSize, fontWeight, bgColor, borderColor, borderRadius, color, dimensions, coord, text, onClick} =
-    props;
+  const {id, font, fontSize, fontWeight, bgColor, borderColor, borderRadius, color, dimensions, coord, text} = props;
   const {width, height, thickness} = {...Default.dimensions, ...dimensions};
 
   const stickStyle = stickCSSProps({
@@ -34,7 +33,7 @@ const TextBubble: FC<TextBubbleProps> = (props = Default) => {
   };
 
   return (
-    <div className="bubble" style={bubbleStyle} onClick={chainCall(onClick)}>
+    <div className="bubble" style={bubbleStyle} id={id || undefined}>
       <div className="text">{text ?? ''}</div>
     </div>
   );

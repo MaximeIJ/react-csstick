@@ -16,7 +16,7 @@ export const Default: Required<TextBubbleProps> = {
     height: DEFAULT_SIZE,
     thickness: '2px',
   },
-  id: 'text bubble',
+  id: '',
   lineStyle: '',
   onClick: () => null,
   text: '',

@@ -4,16 +4,17 @@ import TextBubble from '../TextBubble';
 
 import {Default, Positions} from './presets';
 
-import {chainCall, chainClickable} from '@/hooks/chainClickable';
-import './style.css';
+import {chainClickable} from '@/hooks/chainClickable';
 import {anglesCSSProps, arbitraryCSSProps, multCss, rotateTransformCSSProp, stickCSSProps} from '@/util/css';
 import {LimbAngleProps, StickProps, TextBubbleProps} from '@/util/types';
+
+import './style.css';
 
 // todo: move to props
 const animated = false;
 
 const Stick: FC<StickProps> = (props = Default) => {
-  const {bgColor, color, posId, customPos, dimensions, coord, childProps, lineStyle, onClick} = props;
+  const {id, bgColor, color, posId, customPos, dimensions, coord, childProps, lineStyle, onClick} = props;
   const hasCustomPose = posId === 'custom' && customPos;
   const {limbs, offsets} = !hasCustomPose ? Positions[posId ?? 'custom'] : customPos;
   const {width, height, thickness} = {...Default.dimensions, ...dimensions};
@@ -47,7 +48,7 @@ const Stick: FC<StickProps> = (props = Default) => {
   const bodyStyle = lineStyle === 'sketch' && thickness ? arbitraryCSSProps({['--t']: multCss(thickness, 1.75)}) : {};
 
   return (
-    <div className={`${lineStyle ?? ''} stick`} style={stickStyle} onClick={chainCall(onClick)}>
+    <div className={`${lineStyle ?? ''} stick`} style={stickStyle} id={id || undefined}>
       <div className="head"></div>
       <div className="body" style={bodyStyle}>
         <div className="arms">
@@ -72,7 +73,11 @@ const Stick: FC<StickProps> = (props = Default) => {
           default:
             break;
         }
-        return ChildComponent && <ChildComponent {...(child as TextBubbleProps)} key={`stickchild-${idx}`} />;
+        return (
+          ChildComponent && (
+            <ChildComponent onClick={onClick} {...(child as TextBubbleProps)} key={`stickchild-${idx}`} />
+          )
+        );
       })}
     </div>
   );

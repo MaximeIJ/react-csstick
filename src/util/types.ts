@@ -1,3 +1,5 @@
+import {MutableRefObject} from 'react';
+
 /**
  * Generic dimension-related attributes, in any CSS unit
  * e.g.: '100px', '5%', '0.75vmin', 'inherit'
@@ -24,7 +26,7 @@ export type Coordinates = {
 export type Side = 'left' | 'right';
 
 /** Stick position preset keys (some are not implemented) */
-export type PosType = 'default' | 'custom' | 'panik' |'pointL' | 'pointR' | 'sitL' | 'walkL' | 'walkR';
+export type PosType = 'default' | 'custom' | 'panik' | 'pointL' | 'pointR' | 'sitL' | 'walkL' | 'walkR';
 
 /** Stick limb position preset keys */
 export type LimbPosType = 'default' | 'armPoint' | 'armHip' | 'armHeadHold' | 'legHalfSquat';
@@ -33,8 +35,8 @@ export type LimbPosType = 'default' | 'armPoint' | 'armHip' | 'armHeadHold' | 'l
  * Attributes related to the angle(s) of a Stick's limb
  */
 export type LimbAngleProps = {
-  /** 
-   * The first 3 angles (in degrees) will affect a limb's first three joints starting from the body 
+  /**
+   * The first 3 angles (in degrees) will affect a limb's first three joints starting from the body
    * e.g.: On an arm, the values [30, 105, -45] would look like holding the hand horizontal with the elbow bent, or:
    * 30 degrees between the upper arm and the body (shoulder)
    * 105 degrees between the lower and upper arms (elbow) - Note: don't think about the anatomy of it
@@ -60,36 +62,35 @@ export type LimbAngles = {
 /** Attributes related to a Stick's body position */
 export type StickPosition = {
   /** The angles in the Stick's body */
-  limbs?: LimbAngles; 
-  /** 
-   * An offset applied after the Stick's coord to further adjust placement. 
+  limbs?: LimbAngles;
+  /**
+   * An offset applied after the Stick's coord to further adjust placement.
    * Useful for positions like sitting to lower the stick relative to where
    * it would render if it was standing.
    */
-  offsets?: Coordinates
+  offsets?: Coordinates;
 };
 
 /**
  * Property related to having Comic elements be clickable
  */
 export type Clickable = {
-  /** 
-   * Callback on element click returning a compound ID of the element 
-   * This behavior is subject to change before 1.0.0, returning
-   * instead a ref to the React Element clicked.
+  /**
+   * Callback on element click returning ref to a wrapper around
+   * the React Element clicked.
    */
-  onClick: (id?: string) => void;
+  onClick?: (ref: MutableRefObject<HTMLSpanElement | null>) => void;
 };
 
 /** Common Component properties shared by all main elements */
 export type CommonProps<T = unknown> = Clickable & {
-  /** See @Clickable, currently only used there but subject to change. Does not need to be unique */
+  /** Will be prepended by the parent's id e.g. comic-scene1-stick2-text1 */
   id: string;
   /** Type discriminator representing the elements that extent this base */
   type: 'common' | 'stick' | 'text' | 'scene' | 'comic';
-  /** 
-   * Affects the texture of the stroke for the drawn element, 
-   * with 'sketch' distorting straight lines/angles for a more natural look 
+  /**
+   * Affects the texture of the stroke for the drawn element,
+   * with 'sketch' distorting straight lines/angles for a more natural look
    */
   lineStyle?: 'sketch' | '';
   bgColor?: string;
@@ -138,7 +139,7 @@ export type TextProps = {
   font?: string;
   fontSize?: string;
   fontWeight?: string;
-  borderColor?: string; 
+  borderColor?: string;
   borderRadius?: string;
 };
 
@@ -155,12 +156,12 @@ export type SceneProps = CommonProps & {
 export type ComicProps = CommonProps & {
   /** @deprecated use childProps field instead */
   scenes: Array<SceneProps>;
-  /** 
-   * Determine the composition of the scenes 
+  /**
+   * Determine the composition of the scenes
    * Each array within `layout` corresponds to a row,
    * with each number inside corresponding to its width ratio.
    * Ratios per row are summed to determine the % each one takes
    * Ratios must be > 0
-  */
+   */
   layout: Array<Array<number>>;
 };

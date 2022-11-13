@@ -3,11 +3,11 @@ import {Dimensions, LimbAngleProps, LimbPosType, PosType, StickPosition, StickPr
 const DEFAULT_STICK_SIZE = '12rem';
 
 export const LimbAngles: Record<LimbPosType, LimbAngleProps> = {
-  default: { angle: [10, 0, -180]},
+  default: {angle: [10, 0, -180]},
   armPoint: {angle: [75, 15]},
   armHip: {angle: [75, -85, 10]},
   armHeadHold: {angle: [110, 80, -30]},
-  legHalfSquat: {angle: [50, -50, 90]}
+  legHalfSquat: {angle: [50, -50, 90]},
 };
 
 export const Default: Required<StickProps> = {
@@ -29,7 +29,7 @@ export const Default: Required<StickProps> = {
     height: DEFAULT_STICK_SIZE,
     thickness: '2px',
   } as Required<Dimensions>,
-  id: 'stick',
+  id: '',
   lineStyle: '',
   onClick: () => null,
   posId: 'default',
@@ -40,17 +40,21 @@ export const Positions: Record<PosType, StickPosition> = {
   default: Default.customPos,
   custom: {},
   panik: {
-    limbs: {...Default.customPos.limbs, arms: {
-      left: LimbAngles.armHeadHold,
-      right: LimbAngles.armHeadHold
-    }, legs: {
-      left: LimbAngles.legHalfSquat,
-      right: LimbAngles.legHalfSquat
-    }},
+    limbs: {
+      ...Default.customPos.limbs,
+      arms: {
+        left: LimbAngles.armHeadHold,
+        right: LimbAngles.armHeadHold,
+      },
+      legs: {
+        left: LimbAngles.legHalfSquat,
+        right: LimbAngles.legHalfSquat,
+      },
+    },
     offsets: {
       x: '0px',
-      y: 'calc(var(--h) / -24)'
-    }
+      y: 'calc(var(--h) / -24)',
+    },
   },
   pointL: {
     limbs: {...Default.customPos.limbs, arms: {left: LimbAngles.armPoint}},
@@ -68,4 +72,3 @@ export const Positions: Record<PosType, StickPosition> = {
   walkL: {},
   walkR: {},
 };
-

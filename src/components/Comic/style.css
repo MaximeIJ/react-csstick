@@ -2,13 +2,18 @@
   width: var(--w, 100%);
   height: var(--h, 100%);
   position: relative;
-  outline: var(--t, 2px) solid var(--c, #888888);
+  border: var(--t, 2px) solid var(--c, #888888);
   overflow: hidden;
   background-color: var(--bgc, transparent);
+  box-sizing: content-box;
 }
 
 .row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.row > span {
+  display: contents;
 }

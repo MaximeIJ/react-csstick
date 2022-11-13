@@ -8,7 +8,7 @@ import {baseCSSProps} from '@/util/css';
 import {SceneProps, StickProps} from '@/util/types';
 import {chainClickable} from '@/hooks/chainClickable';
 
-const Scene: FC<SceneProps> = ({bgColor, childProps, color, dimensions, lineStyle, sticks, onClick}) => {
+const Scene: FC<SceneProps> = ({id = 'scene', bgColor, childProps, color, dimensions, lineStyle, sticks, onClick}) => {
   const {width, height, thickness} = dimensions ?? Default.dimensions;
 
   const sceneStyle = baseCSSProps({
@@ -20,13 +20,13 @@ const Scene: FC<SceneProps> = ({bgColor, childProps, color, dimensions, lineStyl
   });
 
   return (
-    <div className={`${lineStyle ?? ''} scene`} style={sceneStyle} onClick={() => onClick()}>
+    <div className={`${lineStyle ?? ''} scene`} style={sceneStyle} id={id || undefined}>
       {[...(childProps ?? []), ...(sticks ?? [])]
         ?.filter(({type}) => type === 'stick')
-        .map(sp => ({bgColor, color, lineStyle, ...sp} as StickProps))
-        .map((stickProps, idx) => (
-          <Stick {...stickProps} onClick={onClick} key={`stick-${idx}-${stickProps.id}`} />
-        ))}
+        .map((sp, idx) => {
+          const stickProps = {bgColor, color, lineStyle, ...sp} as StickProps;
+          return <Stick {...stickProps} onClick={onClick} key={`stick-${idx}-${stickProps.id}`} />;
+        })}
     </div>
   );
 };

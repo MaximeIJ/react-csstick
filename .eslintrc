@@ -1,9 +1,9 @@
 {
   "extends": [
+    "eslint:recommended",
     "prettier",
     "plugin:import/recommended",
     "plugin:import/typescript",
-    "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
@@ -19,6 +19,9 @@
   "settings": {
     "import/resolver": {
       "typescript": {}
+    },
+    "react": {
+      "version": "detect"
     }
   },
   "rules": {
