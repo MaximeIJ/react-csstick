@@ -1,0 +1,2 @@
+import{Big as o}from"./Stick.stories.331fe644.js";import{Big as r}from"./TextBubble.stories.8eb22d3d.js";import{c as e,a as t}from"./Comic.a09b6cdf.js";import"./index.b95fb34d.js";import"./iframe.a0f34415.js";import"./jsx-runtime.332064e9.js";const l={component:e,parameters:{layout:"centered"}},i=o.args,c=r.args,a={...c,coord:t.N},s={...i,coord:t.C,childProps:[a]},S={args:s},B={args:{...s,lineStyle:"sketch"}},f=["Big","Sketch"];export{S as Big,B as Sketch,f as __namedExportsOrder,l as default};
+//# sourceMappingURL=Stick.stories.e053820b.js.map

@@ -1,2 +1,0 @@
-import{T as e,e as t}from"./Comic.2e5d2574.js";import"./index.f306b241.js";import"./iframe.a811c907.js";import"./jsx-runtime.c00474f3.js";const a={component:e,parameters:{layout:"centered"}},o={...t,dimensions:{width:"20vmin",height:"7vmin",thickness:"2px"},fontSize:"3vmin",text:"Hello World!"},m={args:t},l={args:o},p=["Default","Big"];export{l as Big,m as Default,p as __namedExportsOrder,a as default};
-//# sourceMappingURL=TextBubble.stories.ec1f60df.js.map
