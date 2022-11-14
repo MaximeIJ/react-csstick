@@ -22,7 +22,7 @@ export const Default: Required<StickProps> = {
   customPos: {
     limbs: {
       base: [10, 0, -180],
-    },
+    }
   },
   dimensions: {
     width: DEFAULT_STICK_SIZE,
@@ -53,7 +53,7 @@ export const Positions: Record<PosType, StickPosition> = {
     },
     offsets: {
       x: '0px',
-      y: 'calc(var(--h) / -24)',
+      y: 'calc(var(--h) / -14)',
     },
   },
   pointL: {

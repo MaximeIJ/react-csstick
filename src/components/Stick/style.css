@@ -3,8 +3,7 @@
   height: var(--h);
   background-color: transparent;
   padding: 0;
-  --bh: calc(var(--h) * 0.2);
-  /* todo: when --h < ~50rem, limb segments can be disjointed */
+  --bh: calc(var(--h) * 0.29);
   position: absolute;
   transition: all 0.25s ease-in-out;
   /* @Property on angle variables can solve animation */
@@ -17,8 +16,7 @@
 
 .head {
   margin: 0 auto;
-  margin-top: calc(var(--h) * 0.32);
-  --d: calc(var(--h) * 0.2);
+  --d: calc(var(--h) * 0.3);
   width: var(--d);
   height: var(--d);
   border: var(--t) solid var(--c);
