@@ -1,4 +1,4 @@
-export {default as Comic, ComicPresets} from './Comic';
-export {default as Scene, ScenePresets} from './Scene';
-export {default as Stick, StickPresets} from './Stick';
-export {default as TextBubble, TextBubblePresets} from './TextBubble';
+export * as Comic from './Comic';
+export * as Scene from './Scene';
+export * as Stick from './Stick';
+export * as TextBubble from './TextBubble';

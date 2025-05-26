@@ -30,13 +30,17 @@
       "require": "./lib/react-csstick.umd.js"
     },
     "./css": {
-      "import": "./lib/style.css",
-      "require": "./lib/style.css"
+      "import": "./lib/react-csstick.css",
+      "require": "./lib/react-csstick.css"
     }
   },
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
   },
   "devDependencies": {
     "@storybook/builder-vite": "^8.6.14",

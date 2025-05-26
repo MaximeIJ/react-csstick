@@ -15,7 +15,7 @@ import {
 } from '../../src/util/css';
 
 import {StickPresets} from '@/components/Stick';
-import {TextBubblePresets} from '@/components/index';
+import {TextBubblePresets} from '@/components/TextBubble';
 
 describe.concurrent('formatters', () => {
   it('multCss returns a css calc multiplying the expression passed', async ({expect}) => {
