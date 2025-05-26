@@ -1,2 +1,0 @@
-import{C as o,D as t}from"./Comic.a09b6cdf.js";import"./index.b95fb34d.js";import"./iframe.a0f34415.js";import"./jsx-runtime.332064e9.js";const n={component:o,parameters:{layout:"centered"}},s={...t,dimensions:{width:"90vmin",height:"60vmin",thickness:"4px"}},m={args:t},c={args:s},p=["Default","Big"];export{c as Big,m as Default,p as __namedExportsOrder,n as default};
-//# sourceMappingURL=Comic.stories.6c7c25e4.js.map
